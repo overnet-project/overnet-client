@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  min-width: 260px;
+  max-width: 360px;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+}
+
+#status {
+  font-weight: 600;
+}
+
+button {
+  font: inherit;
+  padding: 6px 12px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+label { display: block; margin-top: 12px; }
+input, select, textarea { box-sizing: border-box; width: 100%; padding: 8px; font: inherit; }
+button { margin: 10px 6px 10px 0; }
+details { margin: 16px 0; }
+summary { cursor: pointer; }
+code, li { overflow-wrap: anywhere; }
+textarea { min-height: 80px; }

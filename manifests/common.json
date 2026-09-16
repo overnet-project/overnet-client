@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Overnet",
+  "description": "Your local Overnet identity and sign-in agent.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Overnet",
+    "default_popup": "popup/index.html"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

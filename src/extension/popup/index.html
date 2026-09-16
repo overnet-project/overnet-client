@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overnet — Your identities</title>
+  <link rel="stylesheet" href="popup.css"><script type="module" src="popup.js"></script>
+</head>
+<body>
+  <h1>Overnet</h1>
+  <p id="status" role="status" aria-live="polite">Opening your identities…</p>
+  <section id="existing" hidden>
+    <label for="identity">Your identity</label><select id="identity"></select>
+    <p id="state"></p><details><summary>Public identity</summary><code id="pubkey"></code></details>
+    <form id="unlock-form">
+      <label for="password">Local unlock passphrase</label><input id="password" type="password" autocomplete="current-password" maxlength="1024" required>
+      <button type="submit">Unlock</button>
+    </form>
+    <button type="button" id="lock">Lock identities</button>
+    <details id="backup-section">
+      <summary>Back up this identity</summary>
+      <p>This encrypted backup restores your identity on another installation. Keep its passphrase separately.</p>
+      <form id="backup-form">
+        <label for="backup-password">Backup passphrase</label><input id="backup-password" type="password" autocomplete="new-password" minlength="8" maxlength="1024" required>
+        <label for="backup-confirm">Repeat backup passphrase</label><input id="backup-confirm" type="password" autocomplete="new-password" required>
+        <button type="submit">Create encrypted backup</button>
+      </form>
+      <div id="backup-result" hidden><textarea id="backup" readonly aria-label="Encrypted identity backup"></textarea><!-- The backup URL is assigned before this section is shown. -->
+      <!-- biome-ignore lint/a11y/useValidAnchor: The encrypted backup gets a fresh blob URL at runtime. -->
+      <a id="download">Download backup</a></div>
+    </details>
+  </section>
+  <details id="add-section">
+    <summary>Add an identity</summary>
+    <form id="create-form">
+      <label for="label">Identity name</label><input id="label" type="text" maxlength="80" autocomplete="off" required>
+      <details><summary>Import an existing key or backup</summary>
+        <label for="key">Private key or encrypted backup</label><textarea id="key" autocomplete="off" spellcheck="false" maxlength="500" placeholder="nsec…, ncryptsec…, or a hexadecimal private key"></textarea>
+        <label for="import-password">Existing backup passphrase</label><input id="import-password" type="password" autocomplete="off" maxlength="1024">
+      </details>
+      <label for="new-password">Local unlock passphrase</label><input id="new-password" type="password" autocomplete="new-password" minlength="8" maxlength="1024" required>
+      <label for="confirm-password">Repeat passphrase</label><input id="confirm-password" type="password" autocomplete="new-password" required>
+      <p>This protects your key on this computer. It is never sent to websites.</p>
+      <button type="submit">Save identity</button>
+    </form>
+  </details>
+  <details id="approvals-section"><summary>Remembered access</summary><ul id="policies"></ul><button type="button" id="forget">Forget remembered access</button></details>
+  <footer id="version"></footer>
+</body>
+</html>

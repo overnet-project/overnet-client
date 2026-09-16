@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overnet — Approve sign-in</title>
+  <link rel="stylesheet" href="approval.css"><script type="module" src="approval.js"></script>
+</head>
+<body>
+  <h1>Sign in with Overnet</h1>
+  <p id="status" role="status">Opening your identities…</p>
+  <form hidden>
+    <p>This website is requesting access:</p><p><strong id="origin"></strong></p>
+    <label for="identity">Your identity</label><select id="identity"></select>
+    <div id="unlock"><label for="password">Local unlock passphrase</label><input id="password" type="password" autocomplete="current-password" maxlength="1024"></div>
+    <p>Sign in to <strong id="scope"></strong>.</p>
+    <p id="delegation" hidden></p>
+    <details id="session" hidden><summary>Session details</summary><dl><dt>Authority relay</dt><dd id="relay"></dd><dt>Session public key</dt><dd id="delegate"></dd></dl></details>
+    <p class="trust">This service is identified by its address. Its cryptographic identity has not been verified.</p>
+    <label><input id="remember" type="checkbox"> <span id="remember-text">Remember access for this identity, website, and service.</span></label>
+    <p>Your identity key stays on this computer.</p>
+    <button type="submit" id="approve">Approve sign-in</button>
+  </form>
+  <button type="button" id="deny">Cancel</button>
+  <button type="button" id="manage">Manage identities</button>
+  <button type="button" id="refresh">Refresh identities</button>
+</body>
+</html>

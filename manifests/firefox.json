@@ -1,0 +1,19 @@
+{
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "browser-extension@overnet-project",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "authenticationInfo"
+        ]
+      }
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "type": "module"
+  }
+}

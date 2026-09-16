@@ -1,0 +1,13 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.13/schema.json",
+  "files": { "includes": ["**", "!!.spec", "!!node_modules", "!!dist", "!!coverage", "!!web-ext-artifacts"] },
+  "formatter": { "enabled": false },
+  "assist": { "enabled": false },
+  "linter": { "enabled": true, "rules": { "preset": "recommended", "style": { "noNonNullAssertion": "off" } } },
+  "overrides": [
+    {
+      "includes": ["test/**/*.ts"],
+      "linter": { "rules": { "suspicious": { "noExplicitAny": "off" } } }
+    }
+  ]
+}

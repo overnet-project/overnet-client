@@ -1,0 +1,37 @@
+{
+  "name": "overnet-client",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Overnet protocol, authentication agent, browser extension, and web SDK",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "build:firefox": "node scripts/build.ts firefox",
+    "check": "tsc --noEmit",
+    "lint": "biome lint . --error-on-warnings",
+    "test": "node --test test/*.test.ts",
+    "test:coverage": "c8 npm test",
+    "lint:firefox": "web-ext lint --source-dir dist/extension/firefox --warnings-as-errors",
+    "verify": "npm run lint && npm run check && npm run test:coverage && npm run build:firefox && npm run lint:firefox",
+    "demo": "node examples/server.ts"
+  },
+  "dependencies": {
+    "@scure/base": "2.0.0",
+    "nostr-tools": "2.25.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.13",
+    "@types/firefox-webext-browser": "143.0.0",
+    "@types/jsdom": "30.0.0",
+    "@types/node": "24.13.4",
+    "c8": "12.0.0",
+    "esbuild": "0.28.2",
+    "jsdom": "30.0.1",
+    "typescript": "7.0.2",
+    "web-ext": "10.6.0"
+  }
+}

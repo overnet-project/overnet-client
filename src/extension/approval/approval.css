@@ -1,0 +1,12 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 24px; line-height: 1.5; }
+h1 { font-size: 1.4rem; }
+strong, dd { overflow-wrap: anywhere; }
+dd { margin-left: 0; font-family: monospace; font-size: .9rem; }
+dt { margin-top: .6rem; }
+select, button { font: inherit; padding: 8px 12px; }
+select { display: block; width: 100%; }
+button { margin: 8px 8px 0 0; }
+.trust { font-size: .9rem; }
+label { display: block; margin-top: 12px; }
+input[type=password] { box-sizing: border-box; width: 100%; padding: 8px; font: inherit; }
